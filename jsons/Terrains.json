@@ -147,6 +147,31 @@
 
 	// Terrain features
 	{
+		"name": "Dungeon",
+		"type": "TerrainFeature",
+		"movementCost": 1,
+		"production": 1,
+		"gold": 1,
+		"happiness": -1,
+		"defenceBonus": -0.1,
+		"overrideStats": true,
+		"unbuildable": true,
+		"occursOn": [
+			"Wasteland",
+			"Badlands",
+			"Desert",
+			"Tundra",
+			"Permafrost"
+			],
+		"uniques": [
+			"Rough terrain", "Vegetation",
+			"Nullifies all other stats this tile provides",
+			"Every [6] tiles with this terrain will receive a major deposit of a strategic resource.",
+			"Units ending their turn on this terrain take [5] damage <with [75]% chance> <for units without [Dungeoneer]>",
+			"Units ending their turn on this terrain take [20] damage <when above [20] HP> <with [75]% chance> <for units with [Dungeoneer]>"
+			]
+	},
+	{
 		"name": "Hill",
 		"type": "TerrainFeature",
 		"production": 2,
@@ -287,54 +312,42 @@
 
 	// Natural Wonders
 	{
-		"name": "Great Barrier Reef",
+		"name": "Dagger Maw Reef",
 		"type": "NaturalWonder",
-		"food": 2,
-		"production": 1,
+		"food": 1,
+		"production": 2,
 		"gold": 1,
 		"science": 2,
 		"occursOn": ["Ocean"],
 		"uniques": ["Must be adjacent to [1] to [6] [Coast] tiles",
 			"Must be adjacent to [6] [Water] tiles",
 			"Occurs on latitudes from [10] to [70] percent of distance equator to pole",
-			"Occurs in groups of [2] to [2] tiles"],
+			"Occurs in groups of [3] to [4] tiles"],
 		"turnsInto": "Coast",
 		"impassable": true,
 		"unbuildable": true,
 		"weight": 10
 	},
 	{
-		"name": "Old Faithful",
+		"name": "Northern Obelisk",
 		"type": "NaturalWonder",
-		"science": 2,
-		"happiness": 3,
-		"occursOn": ["Grassland","Plains","Tundra","Mountain"],
+		"science": 6,
+		"food": -1,
+		"happiness": -1,
+		"occursOn": ["Grassland","Plains","Tundra"],
 		"uniques": ["Must be adjacent to [0] [Coast] tiles",
 			"Must be adjacent to [0] to [4] [Mountain] tiles",
 			"Must be adjacent to [3] to [6] [Elevated] tiles",
 			"Must be adjacent to [0] to [3] [Desert] tiles",
-			"Must be adjacent to [0] to [3] [Tundra] tiles"],
+			"Must be adjacent to [0] to [3] [Tundra] tiles",
+			"Occurs on latitudes from [5] to [25] percent of distance equator to pole"],
 		"turnsInto": "Mountain",
 		"impassable": true,
 		"unbuildable": true,
 		"weight": 10
 	},
-	{
-		"name": "El Dorado",
-		"type": "NaturalWonder",
-		"culture": 5,
-		"overrideStats": true,
-		"occursOn": ["Plains"],
-		"turnsInto": "Plains",
-		"impassable": true,
-		"unbuildable": true,
-		"uniques": ["Must be adjacent to [0] [Coast] tiles",
-			"Must be adjacent to [1] to [6] [Jungle] tiles",
-			"Grants 500 Gold to the first civilization to discover it"],
-		"weight": 2
-	},
 	{ // This will count as "Fresh water" in civ 6
-		"name": "Fountain of Youth",
+		"name": "Tower of the Healer",
 		"type": "NaturalWonder",
 		"happiness": 10,
 		"overrideStats": true,
@@ -363,7 +376,7 @@
 		"weight": 10
 	},
 	{
-		"name": "Mount Fuji",
+		"name": "Monument of the Old King",
 		"type": "NaturalWonder",
 		"gold": 1,
 		"culture": 5,
@@ -373,7 +386,20 @@
 			"Must be adjacent to [0] [Desert] tiles",
 			"Must be adjacent to [0] [Mountain] tiles",
 			"Must be adjacent to [0] [Marsh] tiles",
-			"Must be adjacent to [0] to [2] [Hill] tiles",
+			"Must be adjacent to [0] to [2] [Hill] tiles"],
+		"turnsInto": "Mountain",
+		"impassable": true,
+		"unbuildable": true,
+		"weight": 10
+	},
+	{
+		"name": "The Fire God's Den",
+		"type": "NaturalWonder",
+		"science": 5,
+		"occursOn": ["Ocean"],
+		"uniques": ["Must be adjacent to [1] to [6] [Coast] tiles",
+			"Must be adjacent to [0] [Ice] tiles",
+			"Neighboring tiles will convert to [Coast]",,
 			"Must not be on [1] largest landmasses"],
 		"turnsInto": "Mountain",
 		"impassable": true,
@@ -381,20 +407,7 @@
 		"weight": 10
 	},
 	{
-		"name": "Krakatoa",
-		"type": "NaturalWonder",
-		"science": 5,
-		"occursOn": ["Ocean"],
-		"uniques": ["Must be adjacent to [1] to [6] [Coast] tiles",
-			"Must be adjacent to [0] [Ice] tiles",
-			"Neighboring tiles will convert to [Coast]"],
-		"turnsInto": "Mountain",
-		"impassable": true,
-		"unbuildable": true,
-		"weight": 10
-	},
-	{
-		"name": "Rock of Gibraltar",
+		"name": "Mystic Island",
 		"type": "NaturalWonder",
 		"food": 2,
 		"gold": 5,
@@ -408,7 +421,7 @@
 		"weight": 10
 	},
 	{
-		"name": "Cerro de Potosi",
+		"name": "City of Minos",
 		"type": "NaturalWonder",
 		"gold": 10,
 		"occursOn": ["Plains","Mountain"],
@@ -420,9 +433,10 @@
 		"weight": 5
 	},
 	{
-		"name": "Barringer Crater",
+		"name": "Crater of the Punishing Star",
 		"type": "NaturalWonder",
-		"gold": 2,
+		"gold": 3,
+		"production": 2,
 		"science": 3,
 		"occursOn": ["Desert","Tundra"],
 		"uniques": ["Must be adjacent to [0] [Coast] tiles",
@@ -433,6 +447,38 @@
 		"impassable": true,
 		"unbuildable": true,
 		"weight": 10
+	},
+	{
+		"name": "Southern Obelisk",
+		"type": "NaturalWonder",
+		"science": 6,
+		"food": -1,
+		"happiness": -1,
+		"occursOn": ["Grassland","Plains","Tundra"],
+		"uniques": ["Must be adjacent to [0] [Coast] tiles",
+			"Must be adjacent to [0] to [4] [Mountain] tiles",
+			"Must be adjacent to [3] to [6] [Elevated] tiles",
+			"Must be adjacent to [0] to [3] [Desert] tiles",
+			"Must be adjacent to [0] to [3] [Tundra] tiles",
+			"Occurs on latitudes from [75] to [95] percent of distance equator to pole"],
+		"turnsInto": "Mountain",
+		"impassable": true,
+		"unbuildable": true,
+		"weight": 10
+	},
+	{
+		"name": "El Dorado",
+		"type": "NaturalWonder",
+		"culture": 5,
+		"overrideStats": true,
+		"occursOn": ["Plains"],
+		"turnsInto": "Plains",
+		"impassable": true,
+		"unbuildable": true,
+		"uniques": ["Must be adjacent to [0] [Coast] tiles",
+			"Must be adjacent to [1] to [6] [Jungle] tiles",
+			"Grants 500 Gold to the first civilization to discover it"],
+		"weight": 2
 	}
 	/*
         // BNW wonders

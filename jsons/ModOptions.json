@@ -1,0 +1,23 @@
+{
+    "isBaseRuleset": true,
+    "lastUpdated": "2023-10-06T09:48:14Z",
+    "modUrl": "https://github.com/wqkeenan/RPG",
+    "defaultBranch": "main",
+    "author": "wqkeenan",
+    "modSize": 1375,
+    "topics": [
+        "unciv-mod",
+        "unciv-mod-fork",
+        "unciv-mod-rulesets"
+    ],
+    "constants": {
+        "maxXPfromBarbarians": 1500,
+        "cityStrengthBase": 12,
+        "cityStrengthPerPop": 0.5,
+        "unitUpgradeCost": {},
+        "naturalWonderCountMultiplier": 0.5,
+        "naturalWonderCountAddedConstant": 3.5,
+        "ancientRuinCountMultiplier": 0.5
+    }
+
+}

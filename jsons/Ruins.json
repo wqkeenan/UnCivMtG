@@ -1,5 +1,16 @@
 [
     {
+        "name": "discover a dark tome",
+        "notification": "We have discovered Dark Tome from which we may learn the language of the Abyss. Beware, this leads to dark magic.",
+        "uniques": [
+            "Discover [Dark Tome]",
+            "Only available <before discovering [Dark Tome]>",
+            "Only available <before discovering [Is AI]>"
+            ],
+        "weight": 0.1, 
+        "color": "#cf8ff7"
+    },
+    {
         "name": "discover cultural artifacts",
         "notification": "We have discovered cultural artifacts in the ruins! (+20 culture)",
         "uniques": ["Gain [20] [Culture]"],
